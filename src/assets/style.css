@@ -51,10 +51,6 @@ p {
     grid-template-columns: 300px auto;
 }
 
-.todo-view-container {
-    
-}
-
 .todo-view {
     height: 100vh;
     overflow-y: scroll;
@@ -110,6 +106,7 @@ p {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
 .task-item {
@@ -153,8 +150,18 @@ p {
     gap: var(--default-flex-gap);  
 }
 
+.task-title {
+    white-space: nowrap;
+    overflow-x: scroll;
+}
+
 .info-container * {
+    z-index: 50;
     font-size: 0.9rem;
+}
+
+.task-due-date {
+    white-space: nowrap;
 }
 
 
@@ -277,11 +284,13 @@ p {
 }
 
 #btn-show-taskform {
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
+    
+    padding: 0px;
+
     border-radius: 50%;
     text-align: center;
-
-    font-size: 1.5rem;
-    line-height: 0;
+    font-size: 1.4rem;
+    line-height: 0px;
 }

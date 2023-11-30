@@ -17,6 +17,8 @@ function CreateFilterForm () {
         e.preventDefault();
         e.stopPropagation();
         PubSub.publish("FILTER-ADDED", GetFormData());
+        ClearFields();
+        filterFormContainer.classList.toggle("hidden");
     });
 
     filterForm.appendChild(nameTextField.container);
@@ -41,7 +43,11 @@ function CreateFilterForm () {
             filterName: nameTextField.inputField.value,
         }
     }
- 
+
+    function ClearFields () {
+        nameTextField.inputField.value = "";
+    }
+    
     return filterFormContainer;
 }
 

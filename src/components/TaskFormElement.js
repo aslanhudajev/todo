@@ -30,6 +30,8 @@ const TaskForm = (function () {
         e.stopPropagation();
 
         PubSub.publish("TASK-ADDED", GetFormData())
+        ClearFields();
+        taskFormContainer.classList.toggle("hidden");
     })
 
     taskForm.appendChild(titleTextField.container);
@@ -68,6 +70,14 @@ const TaskForm = (function () {
         for (const taskFilter of taskFilters) {
             projectFilterDropDown.AddOption(taskFilter.name, taskFilter.id);
         }
+    }
+
+    function ClearFields () {
+        titleTextField.inputField.value = "";
+        descTextField.inputField.value = "";
+        priorityDropDown.inputField.value = "";
+        projectFilterDropDown.inputField.value = "";
+        dueDateield.inputField.value = "";
     }
  
     return { taskFormContainer };
