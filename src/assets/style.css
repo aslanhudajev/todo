@@ -12,6 +12,7 @@
     --priority-high-bc: #dd4b39;
 
     --btn-bg: #fb7e14;
+    --btn-bg-hover: #b65f13;
 
     --default-flex-gap: 15px;
     --smaller-flex-gap: 10px;
@@ -275,6 +276,10 @@ p {
     color: white;
 }
 
+.btn:hover {
+    background-color: var(--btn-bg-hover);
+}
+
 .task-item .info-container {
     visibility: hidden;
 }
@@ -293,4 +298,8 @@ p {
     text-align: center;
     font-size: 1.4rem;
     line-height: 0px;
+}
+
+.btn:hover {
+    background-color: var(--btn-bg-hover);
 }
